@@ -1,7 +1,7 @@
 import Container from "@/components/container/Container";
 import Link from "next/link";
 import React, { Suspense } from "react";
-import UserComponent from "./userComponent";
+import UserComponent from "@/app/(learnings)/data-fetch/UserComponent";
 
 const getUsersCached = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");

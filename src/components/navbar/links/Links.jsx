@@ -1,8 +1,8 @@
 "use client";
 
 import { HiOutlineBars3, HiXMark } from "react-icons/hi2";
-import { linksList } from "./links-list";
-import NavLink from "./navLink/navLink";
+import { linksList } from "@/components/navbar/links/links-list";
+import NavLink from "@/components/navbar/links/navLink/NavLink";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
