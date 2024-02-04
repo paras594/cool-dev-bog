@@ -9,7 +9,7 @@ import Image from "next/image";
 import React from "react";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog", {
+  const res = await fetch(`${process.env.BASE_URL}/api/blog`, {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -20,7 +20,7 @@ const getData = async () => {
 };
 
 const getUsers = async () => {
-  const res = await fetch("http://localhost:3000/api/users");
+  const res = await fetch(`${process.env.BASE_URL}/api/users`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

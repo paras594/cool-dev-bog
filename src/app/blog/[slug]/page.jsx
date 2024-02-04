@@ -18,7 +18,7 @@ export const generateMetadata = async ({ params }) => {
 
 // FETCH DATA FROM API ROUTE IN NEXT.JS
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`${process.env.BASE_URL}/api/blog/${slug}`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -27,7 +27,7 @@ const getData = async (slug) => {
 };
 
 const getTopPosts = async () => {
-  const res = await fetch(`http://localhost:3000/api/blog/top-posts`);
+  const res = await fetch(`${process.env.BASE_URL}/api/blog/top-posts`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

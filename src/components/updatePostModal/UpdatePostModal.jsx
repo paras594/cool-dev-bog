@@ -30,7 +30,9 @@ const UpdatePostModal = ({ updatePost }) => {
     if (selectedPostId) {
       const fetchAuthors = async () => {
         setLoadingAuthors(true);
-        const res = await fetch("http://localhost:3000/api/users");
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/users`
+        );
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -49,7 +51,7 @@ const UpdatePostModal = ({ updatePost }) => {
       const fetchPost = async () => {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:3000/api/blog/${selectedPostId}`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${selectedPostId}`,
           {
             cache: "no-store",
           }

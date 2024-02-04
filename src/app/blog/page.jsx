@@ -6,7 +6,7 @@ import PostCard from "./postCard/PostCard";
 
 // fetch data from api/blog route in next.js
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog");
+  const res = await fetch(`${process.env.BASE_URL}/api/blog`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

@@ -19,7 +19,9 @@ const BlogsCarousel = () => {
   React.useEffect(() => {
     const getTopPosts = async () => {
       setLoading(true);
-      const res = await fetch(`http://localhost:3000/api/blog/top-posts`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/top-posts`
+      );
       if (!res.ok) {
         throw new Error("Failed to fetch data");
       }
